@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  selectedSong:object;
+  query:string;
+  resultsList:string[]
 
   constructor() { }
+
+  getResults():void{
+    
+  }
 
   ngOnInit() {
   }
