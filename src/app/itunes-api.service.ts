@@ -10,7 +10,7 @@ export class ItunesApiService {
 
   constructor(private http: HttpClient, ) { }
 
-  private itunesUrl = "https://itunes.apple.com/search?term="
+  private itunesUrl = "https://itunes.apple.com/search?limit=15&&term="
 
   getResults(query: string): Observable<string[]> {
 

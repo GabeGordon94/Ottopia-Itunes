@@ -12,15 +12,23 @@ export class SearchBarComponent implements OnInit {
   selectedSong: object;
   query: string;
   resultsList: string[]
+  cache: object={};
 
   constructor(private itunesApi: ItunesApiService, private selector: SelectedSongService) { }
 
   getResults(): void {
-    setTimeout(() => {
-      this.itunesApi.getResults(this.query)
-        .subscribe(result => this.resultsList = result['results']);
+    if (this.cache.hasOwnProperty(this.query)) {
+      this.resultsList = this.cache[this.query]
+    } else {
+      setTimeout(() => {
+        this.itunesApi.getResults(this.query)
+          .subscribe((result) => {
+            this.resultsList = result['results']
+            this.cache[this.query] = result['results']
+          });
+      }
+        , 500)
     }
-      , 500)
   }
 
   selectSong(result: object): void {

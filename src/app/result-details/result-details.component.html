@@ -1,8 +1,19 @@
-<div>
-    <h1>{{songData.artistName}}</h1>
+<div id="results" *ngIf="songData">
+    <hr />
     <h1>{{songData.trackName}}</h1>
+    <h4>by {{songData.artistName}}</h4>
+    <h4>Album: {{songData.collectionName}}</h4>
+    <h4>Type: {{songData.kind | uppercase}}</h4>
+    <h4>Price: {{songData.collectionPrice}}</h4>
+    <div *ngIf="songData.hasOwnProperty('description')">
+        <h4>Description: </h4>
+        <p [innerHTML]="songData.description"></p>
+    </div>
+    <a [href]="songData['collectionViewUrl']" id='albumLink' target="_blank">
+        <p>click to see album</p>
+    </a>
+    <hr />
 </div>
-
 <nav routerLink="">
     <button>Return</button>
 </nav>
