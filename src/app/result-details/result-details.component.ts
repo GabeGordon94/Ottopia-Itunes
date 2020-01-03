@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectedSongService } from '../selected-song.service'
 
 @Component({
   selector: 'app-result-details',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-details.component.css']
 })
 export class ResultDetailsComponent implements OnInit {
-
-  constructor() { }
+  songData:object
+  constructor(private selected:SelectedSongService) { }
 
   ngOnInit() {
+    this.songData=this.selected.selectedSong
   }
 
 }

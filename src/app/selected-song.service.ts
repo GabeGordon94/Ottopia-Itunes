@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SelectedSongService {
+  public selectedSong: object;
 
   constructor() { }
 }

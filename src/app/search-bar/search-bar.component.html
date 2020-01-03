@@ -1,6 +1,15 @@
 <div>
-    <input type='string' placeholder="Search..." [(ngModel)]="query" (change)="getResults()"/>
+    <input type='string' placeholder="Search..." [(ngModel)]="query" (ngModelChange)="getResults()" />
     <span>
-        <button [disabled]="query" (click)="getResults()">Go</button>
+        <button [disabled]="!query" (click)="getResults()">Go</button>
     </span>
+</div>
+<div *ngIf="resultsList">
+    <ul>
+        <nav routerLink="/search">
+            <li *ngFor="let result of resultsList" (click)="selectSong(result)">
+                <app-result [song]="result"></app-result>
+            </li>
+        </nav>
+    </ul>
 </div>
