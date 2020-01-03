@@ -1,7 +1,7 @@
-<div>
-    <input type='string' placeholder="Search..." [(ngModel)]="query" (ngModelChange)="getResults()" />
+<div id="searchContainer">
+    <input type='string' placeholder="Search..." [(ngModel)]="query" (ngModelChange)="getResults()" id="inputBar"/>
     <span>
-        <button [disabled]="!query" (click)="getResults()">Go</button>
+        <button [disabled]="!query" (click)="getResults()" id="searchButton">Go</button>
     </span>
 </div>
 <div *ngIf="resultsList">
