@@ -21,7 +21,6 @@ export class SearchBarComponent implements OnInit {
   getResults(): void {
     let searchQueryFilter=this.query+this.filterSelected
     if (this.cache.hasOwnProperty(searchQueryFilter)) {
-      console.log('cached')
       this.resultsList = this.cache[searchQueryFilter]
     } else {
       setTimeout(() => {

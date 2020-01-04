@@ -1,5 +1,6 @@
 <div id="searchContainer">
-    <input type='string' placeholder="Search..." [(ngModel)]="query" (ngModelChange)="getResults()" id="inputBar" />
+    <input type='string' placeholder="Search..." [(ngModel)]="query" (ngModelChange)="getResults()" id="inputBar"
+        autocomplete="off" />
     <span>
         <button [disabled]="!query" (click)="getResults()" id="searchButton">Go</button>
     </span>
