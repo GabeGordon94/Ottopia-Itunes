@@ -4,7 +4,7 @@
     <h4>by {{songData.artistName}}</h4>
     <h4>Album: {{songData.collectionName}}</h4>
     <h4>Type: {{songData.kind | uppercase}}</h4>
-    <h4>Price: {{songData.collectionPrice}}</h4>
+    <h4>Price: ${{songData.collectionPrice}}</h4>
     <div *ngIf="songData.hasOwnProperty('description')">
         <h4>Description: </h4>
         <p [innerHTML]="songData.description"></p>

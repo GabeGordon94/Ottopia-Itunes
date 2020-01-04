@@ -4,6 +4,13 @@
   height:5vh;
 }
 
+.noResultMsg{
+  color:red;
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+}
+
 #inputBar{
   width:50vw;
 }

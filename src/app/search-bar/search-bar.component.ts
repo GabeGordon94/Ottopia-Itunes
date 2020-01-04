@@ -13,6 +13,7 @@ export class SearchBarComponent implements OnInit {
   query: string;
   resultsList: string[]
   cache: object={};
+  noResultMsg:string = `No results found for `
 
   constructor(private itunesApi: ItunesApiService, private selector: SelectedSongService) { }
 

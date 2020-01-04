@@ -4,10 +4,17 @@
         <button [disabled]="!query" (click)="getResults()" id="searchButton">Go</button>
     </span>
 </div>
-<div *ngIf="resultsList">
+<div *ngIf="resultsList?.length > 0">
     <ul class="results">
         <li *ngFor="let result of resultsList" (click)="selectSong(result)" routerLink="/search">
             <app-result [song]="result"></app-result>
+        </li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li *ngIf='resultsList?.length == 0' class="noResultMsg">
+            {{noResultMsg}}{{query}}
         </li>
     </ul>
 </div>
