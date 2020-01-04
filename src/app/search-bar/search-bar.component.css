@@ -11,6 +11,10 @@
   list-style: none;
 }
 
+#filterField{
+  margin-left: 10px;
+}
+
 #inputBar{
   width:50vw;
 }

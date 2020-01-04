@@ -7,6 +7,8 @@ import { ResultComponent } from './result/result.component';
 import { ResultDetailsComponent } from './result-details/result-details.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

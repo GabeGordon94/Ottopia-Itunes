@@ -3,6 +3,22 @@
     <span>
         <button [disabled]="!query" (click)="getResults()" id="searchButton">Go</button>
     </span>
+
+    <mat-form-field id='filterField'>
+        <mat-label>Filter</mat-label>
+        <mat-select [(value)]="filterSelected">
+            <mat-option value="all">All</mat-option>
+            <mat-option value="music">Music</mat-option>
+            <mat-option value="movie">Movie</mat-option>
+            <mat-option value="podcast">Podcast</mat-option>
+            <mat-option value="musicVideo">MusicVideo</mat-option>
+            <mat-option value="audiobook">Audiobook</mat-option>
+            <mat-option value="shortFilm">Short Film</mat-option>
+            <mat-option value="tvShow">Tv Show</mat-option>
+            <mat-option value="software">Software</mat-option>
+            <mat-option value="ebook">eBook</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
 <div *ngIf="resultsList?.length > 0">
     <ul class="results">

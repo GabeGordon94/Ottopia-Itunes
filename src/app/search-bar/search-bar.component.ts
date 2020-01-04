@@ -14,6 +14,7 @@ export class SearchBarComponent implements OnInit {
   resultsList: string[]
   cache: object={};
   noResultMsg:string = `No results found for `
+  filterSelected:string='all'
 
   constructor(private itunesApi: ItunesApiService, private selector: SelectedSongService) { }
 
@@ -22,7 +23,7 @@ export class SearchBarComponent implements OnInit {
       this.resultsList = this.cache[this.query]
     } else {
       setTimeout(() => {
-        this.itunesApi.getResults(this.query)
+        this.itunesApi.getResults(this.query,this.filterSelected)
           .subscribe((result) => {
             this.resultsList = result['results']
             this.cache[this.query] = result['results']

@@ -10,14 +10,16 @@ export class ItunesApiService {
 
   constructor(private http: HttpClient, ) { }
 
-  private itunesUrl = "https://itunes.apple.com/search?limit=15&&term="
+  private itunesUrl = "https://itunes.apple.com/search?limit=15&term="
+
   private typeUrl ="&entity="
 
-  getResults(query: string): Observable<string[]> {
+  getResults(query: string,filter:string): Observable<string[]> {
 
     const queryArray = query.split(' ')
     const paramString = queryArray.join('+')
-    return this.http.get<string[]>(this.itunesUrl + paramString)
+    console.log(this.itunesUrl + paramString+this.typeUrl+filter)
+    return this.http.get<string[]>(this.itunesUrl + paramString+this.typeUrl+filter)
       .pipe(
         catchError(this.handleError<string[]>('getResults', []))
       );
