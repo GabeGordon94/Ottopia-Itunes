@@ -18,7 +18,6 @@ export class ItunesApiService {
 
     const queryArray = query.split(' ')
     const paramString = queryArray.join('+')
-    console.log(this.itunesUrl + paramString+this.typeUrl+filter)
     return this.http.get<string[]>(this.itunesUrl + paramString+this.typeUrl+filter)
       .pipe(
         catchError(this.handleError<string[]>('getResults', []))

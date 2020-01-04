@@ -1,2 +1,7 @@
-<div class='trackName'>{{song.trackName}}</div>
+<div *ngIf='!song.trackName'>
+    <div class='trackName'>{{song.collectionName}}</div>
+</div>
+<div *ngIf='song.trackName'>
+    <div class='trackName'>{{song.trackName}}</div>
+</div>
 <div>by {{song.artistName}}</div>
